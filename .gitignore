@@ -1,0 +1,11 @@
+# Ignorer les environnements virtuels
+/vgg-service/venv/
+/svm-service/venv/
+
+# Ignorer les modèles entraînés
+vgg-service/Trained_model.h5
+svm-service/SVM.pkl
+
+# Ignorer les fichiers de données
+/Data/
+Data/

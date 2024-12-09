@@ -1,0 +1,26 @@
+version: '3.8'
+services:
+  svm_service:
+    build: ./svm-service
+    ports:
+      - "5000:5000"
+    networks:
+      - app-network
+
+  vgg19_service:
+    build: ./vgg-service
+    ports:
+      - "5001:5001"
+    networks:
+      - app-network
+  
+  frontend:
+    build: ./frontend/music-classification-genre-
+    ports:
+      - "4200:80"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

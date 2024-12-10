@@ -10,7 +10,7 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app) 
 # Charger le modèle Keras pré-entraîné (assurez-vous que le modèle est dans le même dossier que ce fichier)
-model = tf.keras.models.load_model('Trained_model.h5')
+model = tf.keras.models.load_model('/app/models/vgg_model.h5')
 
 # Définir les classes des genres musicaux
 classes = ['blues', 'classical', 'country', 'disco', 'hiphop', 'jazz', 'metal', 'pop', 'reggae', 'rock']

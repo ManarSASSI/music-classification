@@ -6,6 +6,8 @@ services:
       - "5000:5000"
     networks:
       - app-network
+    volumes:
+      - svm_model:/app/models
 
   vgg19_service:
     build: ./vgg-service
@@ -13,6 +15,8 @@ services:
       - "5001:5001"
     networks:
       - app-network
+    volumes:
+      - vgg_model:/app/models
   
   frontend:
     build: ./frontend/music-classification-genre-
@@ -24,3 +28,7 @@ services:
 networks:
   app-network:
     driver: bridge
+
+volumes:
+  svm_model:  
+  vgg_model:

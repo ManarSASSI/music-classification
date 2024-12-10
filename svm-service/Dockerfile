@@ -5,12 +5,13 @@ FROM python:3.10-slim
 WORKDIR /app
 
 # Copier les fichiers nécessaires
-COPY app.py .
-COPY requirements.txt .
-COPY SVM.pkl .
+COPY . /app
 
 # Installer les dépendances
 RUN pip install --no-cache-dir -r requirements.txt
+
+# Ensure the models directory exists (for the shared volume)
+RUN mkdir -p /app/models
 
 # Exposer le port sur lequel Flask tourne
 EXPOSE 5000

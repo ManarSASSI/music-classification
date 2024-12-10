@@ -14,13 +14,13 @@ classes = ['blues', 'classical', 'country', 'disco', 'hiphop', 'jazz', 'metal', 
 
 # Charger le modèle SVM avec un chemin absolu
 current_dir = os.path.dirname(os.path.abspath(__file__))
-model_path = os.path.join(current_dir, 'SVM.pkl')
+model_path = os.path.join(current_dir, '/app/models/svm_model.pkl')
 
 try:
     model = joblib.load(model_path)
     print("Modèle SVM chargé avec succès.")
 except FileNotFoundError:
-    print(f"Erreur : Le fichier SVM.pkl est introuvable au chemin {model_path}")
+    print(f"Erreur : Le fichier svm_model.pkl est introuvable au chemin {model_path}")
     raise
 except Exception as e:
     print(f"Erreur lors du chargement du modèle : {e}")

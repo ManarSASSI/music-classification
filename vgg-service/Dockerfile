@@ -11,8 +11,11 @@ WORKDIR /app
 # Étape 4: Copier le code source dans le conteneur
 COPY . /app
 
-# Étape 5: Exposer le port de l'application Flask
+# Step 5: Ensure the models directory exists (for the shared volume)
+RUN mkdir -p /app/models
+
+# Étape 6: Exposer le port de l'application Flask
 EXPOSE 5001
 
-# Étape 6: Démarrer l'application Flask
+# Étape 7: Démarrer l'application Flask
 CMD ["python", "app.py"]

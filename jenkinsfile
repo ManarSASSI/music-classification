@@ -9,13 +9,18 @@ pipeline {
             }
         }
 
+        stage('Build frontend') {
+            steps {
+                script {
+                    dir('frontend/music-classification-genre-')
+                        bat 'docker build -t frontend .'
+                }
+            }
+        }
         stage('Build and Start Services with Docker Compose') {
             steps {
                 script {
-                    
-                    
                         bat 'docker-compose build'
-                    
                 }
             }
         }

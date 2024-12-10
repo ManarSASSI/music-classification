@@ -9,11 +9,11 @@ pipeline {
             }
         }
 
-        stage('Build frontend') {
+        stage('Build svm') {
             steps {
                 script {
-                    dir('frontend/music-classification-genre-')
-                        {bat 'docker build -t frontend .'}
+                    dir('svm-service')
+                        {bat 'docker build -t svm .'}
                 }
             }
         }

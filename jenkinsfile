@@ -13,7 +13,7 @@ pipeline {
             steps {
                 script {
                     dir('frontend/music-classification-genre-')
-                        bat 'docker build -t frontend .'
+                        {bat 'docker build -t frontend .'}
                 }
             }
         }
